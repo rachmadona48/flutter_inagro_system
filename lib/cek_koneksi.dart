@@ -10,7 +10,7 @@ class Cek_koneksi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffce93d8),
+        // backgroundColor: Color(0xffce93d8),
         // appBar: AppBar(
         //   title: Text("Routing & Navigation"),
         // ),
@@ -23,7 +23,9 @@ class Cek_koneksi extends StatelessWidget {
               switch (result) {
                 case ConnectivityResult.none:
                   // print("no net");
-                  return Center(child: Text("No Internet Connection!"));
+                  return Center(
+                    child: Diskonek()
+                  );
                 case ConnectivityResult.mobile:
                 case ConnectivityResult.wifi:
                   // print("yes net");
@@ -32,10 +34,30 @@ class Cek_koneksi extends StatelessWidget {
                   );
                     
                 default:
-                  return Center(child: Text("No Internet Connection!"));
+                  return Center(
+                    child: Diskonek()
+                  );
               }
             })
       );
+  }
+}
+
+class Diskonek extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text("No Internet Connection!"),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Colors.redAccent,
+            Colors.redAccent
+          ]
+        ),
+        
+      )
+    );
   }
 }
 
