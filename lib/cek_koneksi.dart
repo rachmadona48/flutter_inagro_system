@@ -31,6 +31,7 @@ class Cek_koneksi extends StatelessWidget {
                   // print("yes net");
                   return Center(
                     child: Web_page(),
+                    // child: Diskonek()
                   );
                     
                 default:
@@ -46,17 +47,11 @@ class Cek_koneksi extends StatelessWidget {
 class Diskonek extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("No Internet Connection!"),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Colors.redAccent,
-            Colors.redAccent
-          ]
-        ),
-        
-      )
+    return Scaffold(
+      backgroundColor: Color(0xffea80fc),
+      body: Center(
+        child: Text('No internet connection!')
+      ),
     );
   }
 }
