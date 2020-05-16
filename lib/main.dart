@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: WebViewInFlutter(),
+      debugShowCheckedModeBanner: false, //untuk testing remark baris ini
       home: Cek_koneksi(),
     );
   }
